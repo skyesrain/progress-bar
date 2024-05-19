@@ -1,0 +1,90 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+html,body{
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: "montserrat" sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+/* adding structure to the center of the page */
+.container{
+text-align: center;
+
+}
+
+.progress-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  padding-bottom: 30px;
+
+}
+/* creating horizontal line */
+.progress-container::before{
+  content: '';
+  background: #999;
+  position:absolute;
+  top:20%;
+  left:0;
+  height: 4px;
+  width: 100%;
+
+}
+/* creating moving progress bar */
+.progress{
+  background:#000;
+  position:absolute;
+  top:20%;
+  left:0;
+  height: 4px;
+  width: 0%;
+  transition: 0.4s ease;
+ 
+}
+.circle{
+ border-radius: 50%;
+ background: #fff;
+ color: #999;
+ height:30px ;
+ width:30px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border:2px solid #999;
+ transition: 0.4s ease;
+}
+
+.circle.active{
+border-color:#000;
+}
+
+#btn{
+  margin:1rem;
+  padding:2rem 2rem;
+  background: #000;
+  color:#fff;
+  border-radius:5px;
+  width:5rem;
+  height: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transform: scale(5px);
+
+}
+#btn:disabled{
+  background-color: red;
+  cursor: not-allowed;
+}
